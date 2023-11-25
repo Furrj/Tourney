@@ -1,7 +1,10 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"github.com/Furrj/Tourney/src/internal/functionality"
+)
 
 func main() {
-	fmt.Println("hello")
+	fmt.Printf("%d\n", functionality.Game())
 }
