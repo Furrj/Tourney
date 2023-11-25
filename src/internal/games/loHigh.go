@@ -1,16 +1,18 @@
-package functionality
+package games
 
 import (
 	"math/rand"
 )
 
-func Game() uint8 {
+type LoHigh struct{}
+
+func (LoHigh) RunGame(iterations uint) uint8 {
 	p1Score := 0
 	p2Score := 0
 	draws := 0
 
-	for i := 1; i <= 100; i++ {
-		result := GameRound()
+	for i := uint(1); i <= iterations; i++ {
+		result := gameRound()
 
 		if result == 1 {
 			p1Score++
@@ -30,7 +32,7 @@ func Game() uint8 {
 	}
 }
 
-func GameRound() uint8 {
+func gameRound() uint8 {
 	p1Hand := rand.Intn(101)
 	p2Hand := rand.Intn(101)
 
