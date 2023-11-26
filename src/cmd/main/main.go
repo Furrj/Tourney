@@ -7,7 +7,11 @@ import (
 )
 
 func main() {
-	sessionManager := sessions.InitSessionManager(games.LoHigh{}, 10)
+	manager := sessions.InitSessionManager(games.LoHigh{}, 10)
 
-	fmt.Println(sessionManager.GetPeopleAsString())
+	sesh := manager.SpawnSession(&manager.AllCompetitors[0], &manager.AllCompetitors[1])
+
+	sesh.ExecuteSession(10)
+
+	fmt.Println(manager.GetPeopleAsString())
 }
