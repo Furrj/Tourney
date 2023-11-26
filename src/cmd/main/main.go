@@ -7,7 +7,7 @@ import (
 )
 
 func main() {
-	sessionManager := sessions.InitSessionManager(games.LoHigh{})
+	sessionManager := sessions.InitSessionManager(games.LoHigh{}, 10)
 
-	fmt.Printf("%+v\n", sessionManager)
+	fmt.Println(sessionManager.GetPeopleAsString())
 }
